@@ -62,7 +62,7 @@ for (i = 0; i < lengthP; i++) {
   //add random choices to string using Math.random
   //Math.random only didn't allow the choices to act as a function
   //string needed to be an intenger to multiply
-  randPassword = randPassword + choices[Math.floor(Math.random() * 1)];
+  randPassword = randPassword + choices[Math.floor(Math.random() * 3)];
 }
 //return so it prints on the screen
 return randPassword;
