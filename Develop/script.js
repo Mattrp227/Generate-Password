@@ -1,3 +1,74 @@
+// Assignment code here
+
+function generatePassword(){
+
+//length of password?
+var lengthP;
+lengthP = prompt ("Password Length?"); 
+//is length between 8 and 128 characters?
+if (lengthP > 7) {
+ ;
+}
+//if password is not correct length reprompt
+else if (lengthP < 8) {
+  lengthP = prompt ("Password Length?");
+}
+else if (lengthP > 128){
+  lengthP = prompt ("Password Length?");
+}
+
+
+//define choices variable
+var choices = [];
+
+
+//register selections to password choices
+
+//define characters for password generator
+var lowCase = ["a", "b", "c"];
+//if yes to lowercase add lowercase to choices
+if(confirm ("Use lowercase letters?") == true) {
+  choices += lowCase;}
+
+
+//define characters for password generator
+var upCase = ["M", "N", "P"];
+//if yes to uppercase add uppercase to choices
+if(confirm("Use uppercase letters?") == true) {
+  choices += upCase;}
+
+
+//define characters for password generator
+var symbols = ["!", "@", "$"];
+//if yes to symbols add symbols to choices
+if(confirm("use approved characters?") == true) {
+  choices += symbols;}
+
+
+//define characters for password generator
+var cNumbers = ["9", "0", "5"];
+//if yes to numbers add numbers to choices
+if(confirm("Use numbers?") == true) {
+  choices += cNumbers;}
+
+
+
+
+//need to add selected characters to the password
+
+var randPassword = '';
+//for loop to select random characters from the ones added
+for (i = 0; i < lengthP; i++) {
+  //add random choices to string using Math.random
+  //Math.random only didn't allow the choices to act as a function
+  //string needed to be an intenger to multiply
+  randPassword = randPassword + choices[Math.floor(Math.random() * 1)];
+}
+//return so it prints on the screen
+return randPassword;
+
+}
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -12,53 +83,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-
-
-
-// Assignment code here
-//define characters for password generator
-
-
-function writePassword(){
-//length of password?
-var passwordLength;
-passwordLength = prompt ("Password Length?", undefined, _default,8); 
-//is length between 8 and 128 characters?
-if (passwordLength > 7) {
- return;
-}
-//if password is not correct length reprompt
-else if (passwordLength < 8) {
-  passwordLength = prompt ("Password Length?", undefined, _default,8)
-}
-//pick if they want lower case
-var lowCase;
-lowCase = confirm ("yes or no?");
-
-//pick if they want upper case
-var upCase;
-upCase = confirm ("yes or no?");
-//pick if they want approved characters
-var otherCharacters;
-otherCharacters = confirm ("yes or no?");
-//pick if they want numbers
-var numBERS;
-numBERS = confirm ("yes or no?");
-
-//need to add selected characters to the password
-for (var i = 0; i < Rpassword.length; i++) {
-  Rpassword = Rpassword +   passwordcharacters;
-
-}
-return Rpassword;
-
-var passwordcharacters = "abcde1234!?";
-var Rpassword = '';
-
-
-
-}
-console.log(writePassword());
-
