@@ -17,7 +17,6 @@ else if (lengthP > 128){
   lengthP = prompt ("Password Length?");
 }
 
-
 //define choices variable
 var choices = [];
 
@@ -39,17 +38,17 @@ if(confirm("Use uppercase letters?") == true) {
 
 
 //define characters for password generator
-var symbols = ["!", "@", "$"];
+var specChar = ["!", "@", "$"];
 //if yes to symbols add symbols to choices
 if(confirm("use approved characters?") == true) {
-  choices += symbols;}
+  choices += specChar;}
 
 
 //define characters for password generator
-var cNumbers = ["9", "0", "5"];
+var cNumeric = ["9", "0", "5"];
 //if yes to numbers add numbers to choices
 if(confirm("Use numbers?") == true) {
-  choices += cNumbers;}
+  choices += cNumeric;}
 
 
 
@@ -61,11 +60,12 @@ var randPassword = '';
 for (i = 0; i < lengthP; i++) {
   //add random choices to string using Math.random
   //Math.random only didn't allow the choices to act as a function
-  //string needed to be an intenger to multiply
+  //string needed to be an intenger
   randPassword = randPassword + choices[Math.floor(Math.random() * 3)];
 }
-//return so it prints on the screen
+alert(randPassword);
 return randPassword;
+
 
 }
 
